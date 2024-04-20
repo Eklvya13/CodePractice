@@ -49,13 +49,16 @@ def plotForReal(r1, r2, a, b, c):
 def main():
     # quadratic quation -> aX^2 + bX + c = 0
     print("Example of a quadratic equation:  aX^2 + bX + c = 0\n")
-    a = int(input("a: "))
-    if a == 0:
-        print('Invalid Equation')
+    try:
+        a = int(input("a: "))
+        if a == 0:
+            print('Invalid Equation')
+            return
+        b = int(input('b: '))
+        c = int(input('c: '))
+    except:
+        print("Incorrect Input")
         return
-    b = int(input('b: '))
-    c = int(input('c: '))
-
     roots = findRoots(a, b, c)
     print(f'Roots: {roots[1]}, {roots[2]}')
     if roots[0]:
